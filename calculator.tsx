@@ -1,0 +1,84 @@
+import React, { useState } from 'react';
+
+export const Calculator: React.FC = () => {
+  const [salary, setSalary] = useState<string>('');
+  const [result, setResult] = useState<{fairSalary: number, lost: number} | null>(null);
+
+  const calculate = () => {
+    const val = parseFloat(salary);
+    if (isNaN(val)) return;
+
+    // Based on EPI data
+    const multiplier = 2.15; 
+    const fairSalary = val * multiplier;
+    const lost = fairSalary - val;
+
+    setResult({ fairSalary, lost });
+  };
+
+  return (
+    <div className="relative group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-lg opacity-30 group-hover:opacity-60 blur transition duration-1000"></div>
+        <div className="relative bg-black p-8 rounded-lg border border-slate-800 max-w-2xl mx-auto shadow-2xl">
+          <div className="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
+            <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <h3 className="text-xl md:text-2xl font-bold text-cyan-400 font-mono tracking-wider ml-auto">
+                <span className="text-fuchsia-500">SYSTEM.CALC</span> // LOST_WAGES
+            </h3>
+          </div>
+          
+          <p className="text-slate-400 mb-8 font-mono text-sm leading-relaxed">
+            >> INITIATING SEQUENCE: WAGE_ANALYSIS<br/>
+            >> IF PRODUCTIVITY_MATCH == TRUE<br/>
+            >> CALCULATING DEFICIT...
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 items-end">
+            <div className="flex-grow w-full relative">
+              <label className="block text-xs font-bold text-cyan-600 mb-2 uppercase tracking-widest font-mono">Input Annual Salary</label>
+              <input
+                type="number"
+                value={salary}
+                onChange={(e) => setSalary(e.target.value)}
+                className="w-full bg-black border-b-2 border-slate-700 text-cyan-300 px-4 py-3 focus:border-cyan-400 outline-none font-mono text-xl transition-colors placeholder-slate-800"
+                placeholder="00000"
+              />
+            </div>
+            <button
+              onClick={calculate}
+              className="w-full sm:w-auto bg-cyan-900/30 hover:bg-cyan-900/50 text-cyan-400 border border-cyan-500/50 hover:border-cyan-400 font-mono font-bold py-3 px-8 rounded transition-all uppercase tracking-widest hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+            >
+              Compute
+            </button>
+          </div>
+
+          {result && (
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in font-mono">
+              <div className="p-4 bg-slate-950 border border-green-900/50 relative overflow-hidden group/item">
+                <div className="absolute top-0 right-0 p-1">
+                    <div className="w-2 h-2 bg-green-500/50"></div>
+                </div>
+                <p className="text-xs text-green-600 uppercase tracking-widest mb-1">Target Compensation</p>
+                <p className="text-2xl md:text-3xl font-bold text-green-400 neon-text-shadow">
+                    ${result.fairSalary.toLocaleString(undefined, {maximumFractionDigits: 0})}
+                </p>
+              </div>
+              
+              <div className="p-4 bg-slate-950 border border-red-900/50 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 p-1">
+                    <div className="w-2 h-2 bg-red-500/50"></div>
+                </div>
+                <p className="text-xs text-red-600 uppercase tracking-widest mb-1">Surplus Value Extracted</p>
+                <p className="text-2xl md:text-3xl font-bold text-red-500 neon-text-shadow">
+                    -${result.lost.toLocaleString(undefined, {maximumFractionDigits: 0})}
+                </p>
+                <p className="text-[10px] text-red-900 mt-2 uppercase">>> Transfer to Shareholders Complete</p>
+              </div>
+            </div>
+          )}
+        </div>
+    </div>
+  );
+};
