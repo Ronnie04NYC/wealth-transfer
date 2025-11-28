@@ -33,14 +33,14 @@ export interface InfographicPrompt {
   prompt: string;
 }
 
+export interface AIStudioClient {
+  hasSelectedApiKey(): Promise<boolean>;
+  openSelectKey(): Promise<void>;
+}
+
 // Add global definition for AI Studio on Window
 declare global {
-  interface AIStudio {
-    hasSelectedApiKey(): Promise<boolean>;
-    openSelectKey(): Promise<void>;
-  }
-
   interface Window {
-    aistudio?: AIStudio;
+    aistudio?: AIStudioClient;
   }
 }
