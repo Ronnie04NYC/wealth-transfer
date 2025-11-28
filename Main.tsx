@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchEconomicData } from './services/geminiService';
 import { ReportData } from './types';
-import { ProductivityChart, CeoPayChart, CostOfLivingChart } from './components/Charts';
+import { ProductivityChart, CeoPayChart, CostOfLivingChart } from './components/Visualizations';
 import { Calculator } from './components/Calculator';
 import { ArrowDown, Info, DollarSign, TrendingUp, AlertTriangle, ExternalLink, Terminal, Cpu } from 'lucide-react';
 
