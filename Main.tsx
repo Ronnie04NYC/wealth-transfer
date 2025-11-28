@@ -5,7 +5,7 @@ import { ProductivityChart, CeoPayChart, CostOfLivingChart } from './components/
 import { Calculator } from './components/Calculator';
 import { ArrowDown, Info, DollarSign, TrendingUp, AlertTriangle, ExternalLink, Terminal, Cpu } from 'lucide-react';
 
-const App: React.FC = () => {
+const Main: React.FC = () => {
   const [data, setData] = useState<ReportData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingStatus, setLoadingStatus] = useState<string>("ESTABLISHING_UPLINK...");
@@ -231,4 +231,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Main;
