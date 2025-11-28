@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchEconomicData } from './services/geminiService';
 import { ReportData } from './types';
 import { ProductivityChart, CeoPayChart, CostOfLivingChart } from './components/Visualizations';
-import { Calculator } from './components/Calculator';
+import { WageCalculator } from './components/WageCalculator';
 import { ArrowDown, Info, DollarSign, TrendingUp, AlertTriangle, ExternalLink, Terminal, Cpu } from 'lucide-react';
 
 const Main: React.FC = () => {
@@ -207,7 +207,7 @@ const Main: React.FC = () => {
 
         {/* Calculator Section */}
         <section className="pt-20 border-t border-slate-900">
-          <Calculator />
+          <WageCalculator />
         </section>
 
         {/* Footer / Sources */}
