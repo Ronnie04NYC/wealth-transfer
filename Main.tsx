@@ -117,11 +117,11 @@ const Main: React.FC = () => {
               </h2>
               <div className="space-y-6 text-lg text-slate-400 font-light border-l border-slate-800 pl-6">
                 <p>
-                    <span className="text-white font-mono text-sm block mb-2">> 1948 - 1979</span>
+                    <span className="text-white font-mono text-sm block mb-2">&gt; 1948 - 1979</span>
                     Hourly compensation rose 91%, tracking perfectly with productivity gains (97%). The system was balanced.
                 </p>
                 <p>
-                    <span className="text-white font-mono text-sm block mb-2">> 1979 - Present</span>
+                    <span className="text-white font-mono text-sm block mb-2">&gt; 1979 - Present</span>
                     A deliberate code injection. American efficiency skyrocketed, but wages were hard-coded to flatline. The surplus? Extracted by the 1%.
                 </p>
               </div>
@@ -132,11 +132,11 @@ const Main: React.FC = () => {
                 <div className="absolute bottom-0 left-0 w-2 h-2 bg-cyan-500"></div>
                 <div className="absolute bottom-0 right-0 w-2 h-2 bg-cyan-500"></div>
                 <ProductivityChart data={data.productivityVsWages} />
-               <p className="text-right text-[10px] text-slate-600 mt-4 font-mono uppercase tracking-widest">>> Index 1975-1979 = 100 // BLS_DATA</p>
+               <p className="text-right text-[10px] text-slate-600 mt-4 font-mono uppercase tracking-widest">&gt;&gt; Index 1975-1979 = 100 // BLS_DATA</p>
             </div>
           </div>
           <div className="bg-slate-900/50 border-l-4 border-fuchsia-600 p-8 max-w-4xl mx-auto backdrop-blur-sm">
-            <h3 className="font-bold text-fuchsia-400 mb-2 font-mono uppercase tracking-widest text-sm">>> The $50 Trillion Theft</h3>
+            <h3 className="font-bold text-fuchsia-400 mb-2 font-mono uppercase tracking-widest text-sm">&gt;&gt; The $50 Trillion Theft</h3>
             <p className="text-slate-300 font-mono text-sm leading-relaxed">{data.randReportContext}</p>
           </div>
         </section>
@@ -160,7 +160,7 @@ const Main: React.FC = () => {
                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
               <CeoPayChart data={data.ceoVsWorker} />
-              <p className="text-center text-[10px] text-slate-600 mt-4 font-mono uppercase">>> % Growth Since 1978 // EPI_DATABASE</p>
+              <p className="text-center text-[10px] text-slate-600 mt-4 font-mono uppercase">&gt;&gt; % Growth Since 1978 // EPI_DATABASE</p>
            </div>
         </section>
 
@@ -175,7 +175,7 @@ const Main: React.FC = () => {
                     <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
                 </div>
                <CostOfLivingChart data={data.costOfLiving} />
-               <p className="text-center text-[10px] text-slate-600 mt-4 font-mono uppercase">>> Inflation Adjusted Index (1980=100)</p>
+               <p className="text-center text-[10px] text-slate-600 mt-4 font-mono uppercase">&gt;&gt; Inflation Adjusted Index (1980=100)</p>
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center gap-2 text-red-500 mb-4 font-bold uppercase tracking-[0.2em] text-xs font-mono">
@@ -190,7 +190,7 @@ const Main: React.FC = () => {
               <ul className="space-y-6 mt-6 font-mono text-sm">
                 <li className="flex items-center gap-4 bg-slate-900/30 p-3 border-l-2 border-red-500">
                     <span className="text-red-400 font-bold uppercase tracking-wider min-w-[100px]">Housing</span>
-                    <span className="text-slate-300">Ownership access denied. Rents > Wages.</span>
+                    <span className="text-slate-300">Ownership access denied. Rents &gt; Wages.</span>
                 </li>
                 <li className="flex items-center gap-4 bg-slate-900/30 p-3 border-l-2 border-green-500">
                     <span className="text-green-400 font-bold uppercase tracking-wider min-w-[100px]">Health</span>
