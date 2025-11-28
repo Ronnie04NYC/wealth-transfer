@@ -30,9 +30,9 @@ export const Calculator: React.FC = () => {
           </div>
           
           <p className="text-slate-400 mb-8 font-mono text-sm leading-relaxed">
-            >> INITIATING SEQUENCE: WAGE_ANALYSIS<br/>
-            >> IF PRODUCTIVITY_MATCH == TRUE<br/>
-            >> CALCULATING DEFICIT...
+            &gt;&gt; INITIATING SEQUENCE: WAGE_ANALYSIS<br/>
+            &gt;&gt; IF PRODUCTIVITY_MATCH == TRUE<br/>
+            &gt;&gt; CALCULATING DEFICIT...
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 items-end">
@@ -74,7 +74,7 @@ export const Calculator: React.FC = () => {
                 <p className="text-2xl md:text-3xl font-bold text-red-500 neon-text-shadow">
                     -${result.lost.toLocaleString(undefined, {maximumFractionDigits: 0})}
                 </p>
-                <p className="text-[10px] text-red-900 mt-2 uppercase">>> Transfer to Shareholders Complete</p>
+                <p className="text-[10px] text-red-900 mt-2 uppercase">&gt;&gt; Transfer to Shareholders Complete</p>
               </div>
             </div>
           )}
