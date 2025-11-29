@@ -8,11 +8,10 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: {
-      // Replaces 'process.env.API_KEY' with the actual value from the Vercel environment variable
+      // Safely replace process.env.API_KEY with the string value
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
     build: {
-      // Increase the chunk size warning limit to 1600kb to silence the warning
       chunkSizeWarningLimit: 1600,
     }
   };
