@@ -79,7 +79,9 @@ export const fetchEconomicData = async (): Promise<ReportData> => {
   try {
     const apiCall = async () => {
       // Create new instance to ensure we use the latest env/key if changed
-      const freshAi = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // Switch to import.meta.env for Vite compatibility
+      const apiKey = import.meta.env.VITE_API_KEY;
+      const freshAi = new GoogleGenAI({ apiKey });
       const response = await freshAi.models.generateContent({
         model: "gemini-2.5-flash",
         contents: DATA_PROMPT,
@@ -136,7 +138,8 @@ export const fetchEconomicData = async (): Promise<ReportData> => {
 
 export const generateInfographic = async (prompt: string): Promise<string> => {
   // Create new instance to ensure we use the latest env/key if changed
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const ai = new GoogleGenAI({ apiKey });
   
   const response = await ai.models.generateContent({
     model: 'gemini-3-pro-image-preview',
