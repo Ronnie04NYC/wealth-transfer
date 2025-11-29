@@ -11,5 +11,9 @@ export default defineConfig(({ mode }) => {
       // Replaces 'process.env.API_KEY' with the actual value from the Vercel environment variable
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
+    build: {
+      // Increase the chunk size warning limit to 1600kb to silence the warning
+      chunkSizeWarningLimit: 1600,
+    }
   };
 });
