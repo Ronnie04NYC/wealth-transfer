@@ -1,9 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { ReportData } from "../types";
 
-// Initial client for text data (uses env key)
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 const DATA_PROMPT = `
 You are an expert economic data analyst. 
 Your goal is to retrieve specific historical data to visualize the wealth gap in the US from approximately 1975 to present day.
